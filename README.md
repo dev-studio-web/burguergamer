@@ -1,0 +1,1 @@
+"Tienda de comida rápida"
