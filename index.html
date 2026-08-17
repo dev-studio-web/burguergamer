@@ -1,1 +1,441 @@
 
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burguer Gamer | Vitrina Digital</title>
+    
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#EF233C',
+                            secondary: '#F59E0B',
+                            accent: '#10B981',
+                            dark: '#0D0E12',
+                            card: '#161820',
+                            border: '#2A2D3A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-dark text-gray-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-primary selection:text-white">
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="sticky top-0 z-40 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            
+            <!-- Logo + Nombre -->
+            <div class="flex items-center gap-3">
+                <div class="relative w-14 h-14 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-xl p-0.5 shadow-lg shadow-brand-primary/20">
+                    <div class="w-full h-full bg-brand-dark rounded-[10px] flex items-center justify-center overflow-hidden">
+                        <img src="1000191326.png" alt="Burguer Gamer" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=150&q=80'">
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white leading-none flex items-center gap-2">
+                        BURGUER GAMER <i class="fa-solid font-xs fa-gamepad text-brand-secondary"></i>
+                    </h1>
+                    <span class="text-xs text-gray-400 font-medium">Comida Rápida & Combos Épicos</span>
+                </div>
+            </div>
+
+            <!-- Botón WhatsApp Header -->
+            <a id="header-wa-btn" href="#" target="_blank" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold px-4 py-2.5 rounded-xl shadow-lg shadow-green-500/20 transition-all duration-300 transform hover:-translate-y-0.5">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Atención Directa</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="relative bg-gradient-to-b from-brand-card to-brand-dark border-b border-brand-border py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-20 -bottom-20 w-96 h-96 bg-brand-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-primary/10 text-brand-primary border border-brand-primary/30 mb-4">
+                <i class="fa-solid fa-fire"></i> Sabor en Modo Leyenda
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-4 leading-tight">
+                ¡Haz un <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Power-Up</span> a tu Hambre!
+            </h2>
+            <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
+                Las mejores hamburguesas artesanales, combos individuales y para squads. Selecciona tu pedido y ordénalo directo por WhatsApp.
+            </p>
+
+            <!-- Badges de Garantía -->
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm font-semibold text-gray-300">
+                <div class="flex items-center gap-2 bg-brand-dark/60 border border-brand-border px-3.5 py-2 rounded-lg">
+                    <i class="fa-solid fa-motorcycle text-brand-secondary"></i> Delivery Express
+                </div>
+                <div class="flex items-center gap-2 bg-brand-dark/60 border border-brand-border px-3.5 py-2 rounded-lg">
+                    <i class="fa-solid fa-drumstick-bite text-brand-primary"></i> 100% Carne Premium
+                </div>
+                <div class="flex items-center gap-2 bg-brand-dark/60 border border-brand-border px-3.5 py-2 rounded-lg">
+                    <i class="fa-solid fa-bolt text-brand-accent"></i> Preparación al Momento
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PRINCIPAL: BUSCADOR, FILTROS Y PRODUCTOS -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Controles: Buscador y Categorías -->
+        <div class="space-y-6 mb-8">
+            <!-- Buscador -->
+            <div class="relative max-w-xl mx-auto">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Buscar hamburguesa, combo, papas o bebida..." 
+                    class="w-full bg-brand-card border border-brand-border focus:border-brand-primary focus:ring-1 focus:ring-brand-primary text-white pl-11 pr-4 py-3 rounded-xl outline-none transition duration-200 placeholder-gray-500 text-sm sm:text-base"
+                >
+            </div>
+
+            <!-- Categorías (Horizontal Scroll en Móvil) -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none justify-start sm:justify-center">
+                <button class="category-btn active px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 bg-brand-primary text-white shadow-lg shadow-brand-primary/30" data-category="Todos">
+                    🎮 Todos los Productos
+                </button>
+                <button class="category-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 bg-brand-card text-gray-300 hover:text-white border border-brand-border" data-category="Burgers Épicas">
+                    🍔 Burgers Épicas
+                </button>
+                <button class="category-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 bg-brand-card text-gray-300 hover:text-white border border-brand-border" data-category="Combos Co-Op">
+                    🍟 Combos Co-Op
+                </button>
+                <button class="category-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 bg-brand-card text-gray-300 hover:text-white border border-brand-border" data-category="Snacks & Extras">
+                    🥓 Snacks & Extras
+                </button>
+                <button class="category-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 bg-brand-card text-gray-300 hover:text-white border border-brand-border" data-category="Bebidas">
+                    🥤 Bebidas Potion
+                </button>
+            </div>
+        </div>
+
+        <!-- Grid de Productos -->
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Inyección dinámica JS -->
+        </div>
+
+        <!-- Empty State (No se encontraron productos) -->
+        <div id="empty-state" class="hidden text-center py-16 px-4">
+            <div class="w-20 h-20 mx-auto mb-4 bg-brand-card border border-brand-border rounded-full flex items-center justify-center text-gray-500 text-3xl">
+                <i class="fa-solid fa-ghost"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Game Over para esta búsqueda</h3>
+            <p class="text-gray-400 text-sm max-w-md mx-auto mb-6">No encontramos ningún producto que coincida con tus filtros. Intenta buscando otro término.</p>
+            <button id="reset-search-btn" class="bg-brand-primary hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-colors duration-200 text-sm">
+                Ver todo el menú
+            </button>
+        </div>
+    </main>
+
+    <!-- SECCIÓN CÓMO COMPRAR -->
+    <section class="bg-brand-card border-t border-brand-border py-12 px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-extrabold text-center text-white mb-8">
+                ¿Cómo hacer tu pedido? <span class="text-brand-secondary">En 3 sencillos pasos</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Paso 1 -->
+                <div class="bg-brand-dark/50 border border-brand-border rounded-2xl p-6 text-center relative">
+                    <div class="w-12 h-12 bg-brand-primary/20 text-brand-primary rounded-xl flex items-center justify-center font-black text-xl mx-auto mb-4 border border-brand-primary/30">
+                        1
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Elige tu Menú</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">Navega por nuestro catálogo y selecciona tus hamburguesas o combos favoritos.</p>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="bg-brand-dark/50 border border-brand-border rounded-2xl p-6 text-center relative">
+                    <div class="w-12 h-12 bg-brand-secondary/20 text-brand-secondary rounded-xl flex items-center justify-center font-black text-xl mx-auto mb-4 border border-brand-secondary/30">
+                        2
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Ordena por WhatsApp</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">Haz clic en "Comprar por WhatsApp". Se generará un mensaje automático con tu pedido.</p>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="bg-brand-dark/50 border border-brand-border rounded-2xl p-6 text-center relative">
+                    <div class="w-12 h-12 bg-brand-accent/20 text-brand-accent rounded-xl flex items-center justify-center font-black text-xl mx-auto mb-4 border border-brand-accent/30">
+                        3
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">¡Recibe y Disfruta!</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">Coordinamos el pago y envío rápido hasta tu puerta para que disfrutes sin pausas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark border-t border-brand-border py-8 px-4 sm:px-6 lg:px-8 text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <div>
+                <p class="font-bold text-white text-sm">Burguer Gamer</p>
+                <p>El mejor sabor de la comida rápida en cada partida.</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 bg-green-500/10 text-green-400 px-3 py-1 rounded-full border border-green-500/20">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Abierto Ahora
+                </span>
+                <p><i class="fa-regular fa-clock"></i> 5:00 PM - 11:30 PM</p>
+            </div>
+            <p>&copy; 2026 Burguer Gamer. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a 
+        id="floating-wa-btn" 
+        href="#" 
+        target="_blank" 
+        aria-label="Contactar por WhatsApp" 
+        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all duration-300 transform hover:scale-110 group"
+    >
+        <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-red-500 rounded-full border-2 border-brand-dark"></span>
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JAVASCRIPT DE LA APLICACIÓN -->
+    <script>
+        // CONFIGURACIÓN OBLIGATORIA DEL USUARIO
+        const PHONE_NUMBER = "584121716063";
+        const STORE_NAME = "Burguer Gamer";
+
+        // BASE DE DATOS DE PRODUCTOS
+        const products = [
+            {
+                id: 1,
+                name: "Gay Burger Classic",
+                category: "Burgers Épicas",
+                price: 6.99,
+                badge: "Más Vendida 🔥",
+                specs: ["150g Carne Smash", "Doble Cheddar", "Pepinillos", "Salsa Secret Pixel"],
+                image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 2,
+                name: "Combo Boss Final (Doble)",
+                category: "Combos Co-Op",
+                price: 11.99,
+                badge: "Recomendado 🎮",
+                specs: ["Doble Carne 300g", "Tocineta Crocante", "Papas Rústicas", "Bebida 500ml"],
+                image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f6?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 3,
+                name: "Crispy Fire Chicken",
+                category: "Burgers Épicas",
+                price: 7.99,
+                badge: "Picante 🌶️",
+                specs: ["Pechuga Crujiente", "Salsa Spicy BBQ", "Coleslaw Gamer", "Queso Fundido"],
+                image: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 4,
+                name: "Combo Squad Co-Op (Para 2)",
+                category: "Combos Co-Op",
+                price: 18.50,
+                badge: "Ahorro 🏆",
+                specs: ["2 Burgers Clásicas", "2 Raciones de Papas", "Nuggets x6", "2 Refrescos"],
+                image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 5,
+                name: "Power-Up Loaded Fries",
+                category: "Snacks & Extras",
+                price: 4.99,
+                badge: "Para Compartir",
+                specs: ["Papas Fritas XL", "Queso Cheddar Liquido", "Tocineta Picada", "Cebollín"],
+                image: "https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 6,
+                name: "Nuggets Respawn x10",
+                category: "Snacks & Extras",
+                price: 4.50,
+                badge: "Crunchy",
+                specs: ["10 Nuggets Pollo", "Salsa BBQ Gamer", "Salsa Mostaza Miel"],
+                image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 7,
+                name: "Mana Potion - Cola",
+                category: "Bebidas",
+                price: 1.50,
+                badge: "Fría ❄️",
+                specs: ["Lata 355ml", "Zero Azúcar / Regular"],
+                image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                id: 8,
+                name: "Health Potion - Naranja",
+                category: "Bebidas",
+                price: 1.50,
+                badge: "Fría ❄️",
+                specs: ["Lata 355ml", "Sabor Naranja Neón"],
+                image: "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?auto=format&fit=crop&w=600&q=80"
+            }
+        ];
+
+        // ELEMENTOS DOM
+        const productsGrid = document.getElementById('products-grid');
+        const searchInput = document.getElementById('search-input');
+        const emptyState = document.getElementById('empty-state');
+        const resetSearchBtn = document.getElementById('reset-search-btn');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const headerWaBtn = document.getElementById('header-wa-btn');
+        const floatingWaBtn = document.getElementById('floating-wa-btn');
+
+        let currentCategory = "Todos";
+        let searchQuery = "";
+
+        // INICIALIZACIÓN
+        document.addEventListener('DOMContentLoaded', () => {
+            setupWhatsAppLinks();
+            renderProducts();
+            setupEventListeners();
+        });
+
+        // GENERADOR DE URL WHATSAPP
+        function getWhatsAppUrl(message) {
+            return `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+        }
+
+        function setupWhatsAppLinks() {
+            const generalMessage = `¡Hola ${STORE_NAME}! 🎮 Quisiera consultar su menú y realizar un pedido.`;
+            headerWaBtn.href = getWhatsAppUrl(generalMessage);
+            floatingWaBtn.href = getWhatsAppUrl(generalMessage);
+        }
+
+        // RENDERIZADO DE PRODUCTOS
+        function renderProducts() {
+            const filtered = products.filter(product => {
+                const matchesCategory = currentCategory === "Todos" || product.category === currentCategory;
+                const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                      product.specs.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                productsGrid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            productsGrid.innerHTML = filtered.map(product => `
+                <div class="bg-brand-card border border-brand-border rounded-2xl overflow-hidden flex flex-col justify-between hover:border-brand-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-brand-primary/10 group">
+                    <div>
+                        <!-- Imagen con Badge -->
+                        <div class="relative h-48 w-full overflow-hidden bg-brand-dark">
+                            <img 
+                                src="${product.image}" 
+                                alt="${product.name}" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80'"
+                            >
+                            <span class="absolute top-3 right-3 bg-brand-dark/80 backdrop-blur-md text-brand-secondary text-xs font-bold px-2.5 py-1 rounded-lg border border-brand-secondary/30 shadow-md">
+                                ${product.badge}
+                            </span>
+                        </div>
+
+                        <!-- Información -->
+                        <div class="p-5">
+                            <span class="text-xs text-brand-primary font-bold uppercase tracking-wider">${product.category}</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2 group-hover:text-brand-secondary transition-colors">${product.name}</h3>
+                            
+                            <!-- Especificaciones / Ingredientes -->
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                ${product.specs.map(spec => `
+                                    <span class="text-[11px] bg-brand-dark text-gray-300 px-2 py-0.5 rounded-md border border-brand-border">
+                                        ${spec}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Precio y Botón de Comprar -->
+                    <div class="p-5 pt-0 border-t border-brand-border/40 mt-auto flex items-center justify-between gap-3 pt-4">
+                        <div>
+                            <span class="text-xs text-gray-400 block leading-none">Precio</span>
+                            <span class="text-xl font-extrabold text-brand-accent">$${product.price.toFixed(2)}</span>
+                        </div>
+                        <button 
+                            onclick="buyProduct('${product.name}', ${product.price})"
+                            class="bg-brand-primary hover:bg-red-600 text-white font-bold px-3.5 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-1.5 transition-all duration-200 active:scale-95 shadow-lg shadow-brand-primary/20"
+                        >
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>Pedir</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // COMPRAR PRODUCTO INDIVIDUAL
+        function buyProduct(productName, price) {
+            const message = `¡Hola ${STORE_NAME}! 🍔 Quisiera pedir: *${productName}* ($${price.toFixed(2)}). ¿Me confirman el tiempo de entrega?`;
+            window.open(getWhatsAppUrl(message), '_blank');
+        }
+
+        // EVENT LISTENERS
+        function setupEventListeners() {
+            // Buscador
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.trim();
+                renderProducts();
+            });
+
+            // Categorías
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    categoryBtns.forEach(b => {
+                        b.classList.remove('bg-brand-primary', 'text-white', 'shadow-lg', 'shadow-brand-primary/30');
+                        b.classList.add('bg-brand-card', 'text-gray-300', 'border', 'border-brand-border');
+                    });
+                    
+                    btn.classList.remove('bg-brand-card', 'text-gray-300', 'border', 'border-brand-border');
+                    btn.classList.add('bg-brand-primary', 'text-white', 'shadow-lg', 'shadow-brand-primary/30');
+
+                    currentCategory = btn.getAttribute('data-category');
+                    renderProducts();
+                });
+            });
+
+            // Resetear Búsqueda
+            resetSearchBtn.addEventListener('click', () => {
+                searchQuery = "";
+                searchInput.value = "";
+                currentCategory = "Todos";
+                categoryBtns[0].click();
+            });
+        }
+    </script>
+</body>
+</html>
